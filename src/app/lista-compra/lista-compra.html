@@ -1,0 +1,16 @@
+<input (input)="onCambio($event)" placeholder="Añadir producto..." maxlength="20" (keydown.enter)="addProducto()" [value]="nuevoProducto" >
+<p [class.caracteres-maximos]="nuevoProducto.length >= maxCaracteres">Caracteres: {{ nuevoProducto.length }}/{{ maxCaracteres }}</p>
+
+<button (click)="addProducto()" [disabled]="nuevoProducto.trim() === '' || arrayProductos.length >= maxProductos" >Añadir</button>
+
+
+<div [class.lista-llena]="arrayProductos.length >= maxProductos">
+  <p>Lista de productos ({{ arrayProductos.length }}/{{ maxProductos }}): {{ mostrarProductos() }}</p>
+</div>
+@if (estaVacia()) {
+  <p class="lista-vacia">La lista está vacía.</p>
+}
+
+
+<button (click)="vaciarLista($event)">Vaciar lista</button>
+<p>Mantén pulsada la tecla Shift para vaciar la lista.</p>

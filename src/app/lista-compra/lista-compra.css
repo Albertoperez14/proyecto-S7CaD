@@ -1,0 +1,10 @@
+.lista-llena {
+  background-color: orange;
+}
+.caracteres-maximos {
+  color: red;
+}
+.lista-vacia {
+  color: gray;
+  font-style: italic;
+}
